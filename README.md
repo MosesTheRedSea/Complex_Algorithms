@@ -1,2 +1,2 @@
 # Complex_Algorithimns
-Data Structures &amp; Algorithmics C++
+Data Structures &amp; Algorithms C++
