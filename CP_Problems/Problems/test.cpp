@@ -173,7 +173,49 @@ void printSet(unordered_set<int> nums) {
 	std::cout << std::endl;
 }
 
-int main() {
+// Max Area - Solution 1 - O(n)
+int maxArea(std::vector<int> graph) {
+    int water = 0;
+    int lp = 0;
+    int rp = graph.size()-1;
 
+    while (rp < graph.size()) {
+        if (graph[lp] >= graph[rp] || graph[rp] >= graph[lp]) {
+        	// These calculations are correct
+            int diff = (graph[lp] - graph[rp]);
+            int height = diff < 0 ? graph[rp] + diff : graph[lp] - diff;
+            int width = rp - lp;
+            water = std::max(height*width, water);
+        } 
+        if (graph[lp] < graph[rp]) {
+        	lp++;
+        } else {
+        	rp--;
+        }
+   }
+   return water;
+}
+
+// Max Area - Solution 2 - O(n^2)
+int maxArea2(std::vector<int> graph) {
+	int water = 0;
+	for (int lp = 0; lp < graph.size(); ++lp) {
+		for (int rp = 0; rp < graph.size(); ++rp) {
+			int diff = (graph[lp] - graph[rp]);
+            int height = diff < 0 ? graph[rp] + diff : graph[lp] - diff;
+            int width = rp - lp;
+            int area = height * width;
+			water = std::max(area, water);
+		}
+	}
+	return water;
+}
+
+int main() {
+	vector<int> graph = {1,8,6,2,5,4,8,3,7};
+	cout << maxArea(graph) << endl;
+
+	vector<int> graph2 = {2,3,4,5,18,17,6};
+	cout << maxArea(graph2) << endl;
 	return 0;
 }	

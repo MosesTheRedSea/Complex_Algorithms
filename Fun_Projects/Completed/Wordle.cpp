@@ -46,6 +46,8 @@ const std::string GREEN_COLOR = "\033[32m";
 const std::string YELLOW_COLOR = "\033[33m";
 
 void displayWordleBoard(char board[6][5], string chosenWord) {
+
+
 	int rows = 6;
     int cols = 5;
     std::cout << "+----+----+----+----+----+" << std::endl;
@@ -130,23 +132,26 @@ void playWordle() {
     		solved = true;
     		break;
     	}
-
     	round++;
     	lives--;
     }
-    if (solved) 
+
+    if (solved) {
     	std::cout << GREEN_COLOR << "YOU WIN" << RESET_COLOR << endl;
-    else 
+    } else {
     	std::cout << RED_COLOR << "YOU LOSE" << RESET_COLOR << endl;
+    }
+
     std::cout << "Type Again to play one more time..." << endl;
-    string response;
-    do {
-    	cin >> response;
-    	if (response == "Again") {
-    		playWordle();
-    	}
-    } while(response != "Again");
+		    string response;
+		    do {
+		    	cin >> response;
+		    	if (response == "Again") {
+		    		playWordle();
+		    	}
+		    } while(response != "Again");
 }
+
 
 int main() {
 
