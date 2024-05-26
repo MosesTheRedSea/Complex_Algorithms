@@ -45,9 +45,9 @@ const std::string RED_COLOR = "\033[31m";
 const std::string GREEN_COLOR = "\033[32m";
 const std::string YELLOW_COLOR = "\033[33m";
 
+// Future feature to add is only chaning the correct letters including letter count
+
 void displayWordleBoard(char board[6][5], string chosenWord) {
-
-
 	int rows = 6;
     int cols = 5;
     std::cout << "+----+----+----+----+----+" << std::endl;
@@ -66,6 +66,15 @@ void displayWordleBoard(char board[6][5], string chosenWord) {
         std::cout << std::endl;
         std::cout << "+----+----+----+----+----+" << std::endl;
     }
+}
+
+// Convert String to lowercase version of it self
+std::string toLowerCase(const std::string& str) {
+    std::string result;
+    for (char c : str) {
+        result += std::tolower(c);
+    }
+    return result;
 }
 
 void playWordle() {
@@ -127,8 +136,9 @@ void playWordle() {
     	}
 
     	displayWordleBoard(player, word);
+ 		
 
-    	if (playerGuess == word) {
+    	if (toLowerCase(playerGuess) == word) {
     		solved = true;
     		break;
     	}
@@ -143,15 +153,14 @@ void playWordle() {
     }
 
     std::cout << "Type Again to play one more time..." << endl;
-		    string response;
-		    do {
-		    	cin >> response;
-		    	if (response == "Again") {
-		    		playWordle();
-		    	}
-		    } while(response != "Again");
+	string response;
+	do {
+		cin >> response;
+		if (response == "Again") {
+		    playWordle();
+		}
+	} while(response != "Again");
 }
-
 
 int main() {
 
