@@ -38,4 +38,4 @@ This repository is maintained by [Moses Adewolu]. Contributions from the open-so
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/MosesTheRedSea/Complex_Algorithims/blob/main/LICENSE).
