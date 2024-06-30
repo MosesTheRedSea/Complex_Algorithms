@@ -4,8 +4,6 @@
 #include <typeinfo>
 #include <array>
 #include <time.h>
-#include <time.h>
-#include <time.h>
 
 // Built Data Structures
 #include <unordered_map>
@@ -38,15 +36,14 @@ using namespace std;
 	    std::cout << BLUE_COLOR << "This is blue text." << RESET_COLOR << std::endl;
 	    return 0;
 	}
-
 */
+
 const std::string RESET_COLOR = "\033[0m";
 const std::string RED_COLOR = "\033[31m";
 const std::string GREEN_COLOR = "\033[32m";
 const std::string YELLOW_COLOR = "\033[33m";
 
 // Future feature to add is only chaning the correct letters including letter count
-
 void displayWordleBoard(char board[6][5], string chosenWord) {
 	int rows = 6;
     int cols = 5;
@@ -56,7 +53,7 @@ void displayWordleBoard(char board[6][5], string chosenWord) {
         for (int j = 0; j < cols; ++j) {
         	char letter = chosenWord[j];
         	if (tolower(board[i][j]) == letter) {
-        		std::cout << GREEN_COLOR << board[i][j] << RESET_COLOR << "  | ";
+        		std::cout << GREEN_COLOR << "" << board[i][j] << RESET_COLOR << "  | ";
         	} else if (tolower(board[i][j]) != letter && chosenWord.find(tolower(board[i][j])) != std::string::npos) {
         		std::cout << YELLOW_COLOR << board[i][j] << RESET_COLOR << "  | ";
         	} else {
@@ -123,21 +120,16 @@ void playWordle() {
     int lives = 6;
     int round = 0;
     bool solved = false;
-
     while (lives > 0) {
     	cout << "Enter Guess .." << endl;
     	string playerGuess;
     	do {
     		cin >> playerGuess;
     	} while(playerGuess.size() < 5 || playerGuess.size() > 5);
-
     	for (int i = 0; i < 5; ++i) {
     		player[round][i] = toupper(playerGuess[i]);
     	}
-
     	displayWordleBoard(player, word);
- 		
-
     	if (toLowerCase(playerGuess) == word) {
     		solved = true;
     		break;
@@ -145,13 +137,11 @@ void playWordle() {
     	round++;
     	lives--;
     }
-
     if (solved) {
     	std::cout << GREEN_COLOR << "YOU WIN" << RESET_COLOR << endl;
     } else {
     	std::cout << RED_COLOR << "YOU LOSE" << RESET_COLOR << endl;
     }
-
     std::cout << "Type Again to play one more time..." << endl;
 	string response;
 	do {
@@ -163,8 +153,6 @@ void playWordle() {
 }
 
 int main() {
-
 	playWordle();
-
 	return 0;
 }

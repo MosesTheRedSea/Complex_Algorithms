@@ -15,7 +15,6 @@
 #include <vector>
 #include <unordered_set>
 #include <set> 
-
 using namespace std;
 
 /*
@@ -32,7 +31,7 @@ void printVector(vector<int> num) {
 }
 
 /*
-	Return the maximum profit you can achieve from this transaction. 
+	Return the maximum profit you can achieve from this transaction.
 	If you cannot achieve any profit, return 0.
 */
 int maxProfit(vector<int> prices) {
@@ -48,6 +47,7 @@ int maxProfit(vector<int> prices) {
 		}
 		rp += 1;
 	}
+
 	return maxProfit;
 }
 
@@ -69,7 +69,7 @@ vector<int> productExceptSelf(vector<int> values) {
 		}
 		val2[count] = val;
 		count++;
-	}	
+	}
 	return val2;
 }
 
@@ -81,28 +81,25 @@ vector<int> productExceptSelf2(vector<int> values) {
 		val2[i] = prefix;
 		prefix *= values[i];
 	}
-	printVector(val2);
-	cout << " " << endl;
 	int postfix = 1;
 	for (int j = val2.size()-1; j > -1; --j) {
 		val2[j] *= postfix;
 		postfix *= values[j];
 	}
-	printVector(val2);
 	cout << " " << endl;
 	return val2;
 }
 
-// stringTImes
-string stringTimes(string str, int n) {
+// String Times 
+string stringTimes(string str, int n) {	
 	string final = "";
-	for (int i = 0; i < n; ++i) {
-		final.append(str);
-	}
-	return final;
-}
+	for (int i = 0; i < n; ++i) {	
+		final.append(str);	
+	}	
+	return final;	
+}	
 
-string frontTimes(string str, int n) {
+string frontTimes(string str, int n) {	
 	string final = str.substr(0,n+1);
 	string output = "";
 	for (int i = 0; i < n; ++i) {
@@ -111,8 +108,8 @@ string frontTimes(string str, int n) {
 	return output;
 }
 
-// substr(first index start, length);
-int countXX(string str) {
+// Substr(first, index, start, length)
+int countXX(string str) {	
 	int count = 0;
 	for (int i = 0; i < str.length()-1; ++i) {
 		if (str.substr(i, 2) == "xx") {
@@ -143,27 +140,6 @@ string stringSplosion(string str) {
 }
 
 int last2(string str) {
-	/*
-		public int last2(String str) {
-		  // Screen out too-short string case.
-		  if (str.length() < 2) return 0;
-		  
-		  String end = str.substring(str.length()-2);
-		  // Note: substring() with 1 value goes through the end of the string
-		  int count = 0;
-		  
-		  // Check each substring length 2 starting at i
-		  for (int i=0; i<str.length()-2; i++) {
-		    String sub = str.substring(i, i+2);
-		    if (sub.equals(end)) {  // Use .equals() with strings
-		      count++;
-		    }
-		  }
-
-		  return count;
-		}
-	*/
-	return 0;
 }
 
 void printSet(unordered_set<int> nums) {
@@ -178,7 +154,6 @@ int maxArea(std::vector<int> graph) {
     int water = 0;
     int lp = 0;
     int rp = graph.size()-1;
-
     while (rp < graph.size()) {
         if (graph[lp] >= graph[rp] || graph[rp] >= graph[lp]) {
         	// These calculations are correct
@@ -186,7 +161,7 @@ int maxArea(std::vector<int> graph) {
             int height = diff < 0 ? graph[rp] + diff : graph[lp] - diff;
             int width = rp - lp;
             water = std::max(height*width, water);
-        } 
+        }  
         if (graph[lp] < graph[rp]) {
         	lp++;
         } else {
@@ -211,11 +186,101 @@ int maxArea2(std::vector<int> graph) {
 	return water;
 }
 
-int main() {
-	vector<int> graph = {1,8,6,2,5,4,8,3,7};
-	cout << maxArea(graph) << endl;
+int countEvens(std::vector<int> nums) {
+	int count = 0;
+	for (int val : nums) {
+		count++;
+	}
+	return count;
+}
 
-	vector<int> graph2 = {2,3,4,5,18,17,6};
-	cout << maxArea(graph2) << endl;
+int bigDiff(std::vector<int> nums) {
+	int max = 0; // What if first value is 0
+	int min = nums[0];
+	for (int i = 0; i < nums.size(); ++i) {
+		if (nums[i] > max) {
+			max = nums[i]; 
+		}
+	}
+	for (int j = 1;  j < nums.size(); ++j) {
+		if (nums[j] < min) {
+			min =  nums[j];
+		}
+	}
+	return max - min;
+}	
+
+int centeredAverage(std::vector<int> nums) {
+	int max = 0; // What if first value is 0
+	int min = nums[0];
+	for (int i = 0; i < nums.size(); ++i) {
+		if (nums[i] > max) {
+			max = nums[i];
+		}
+		if (nums[i] < min) {
+			min =  nums[i];
+		}
+	}
+	int sum = 0;
+	int count = 0;
+	int m1 = 0;
+	int m2 = 0;
+	for (int k = 0; k < nums.size(); ++k) {
+		if (nums[k] == max) {
+			if (m1 == 0) {
+				m1++;
+				continue;
+			}
+		} else if(nums[k] == min) {
+			if (m2 == 0)  {
+				m2++;
+				continue;
+			}
+		} 
+		sum += nums[k];
+		count++;
+	}
+	return sum / count;
+}
+
+ 
+string doubleChar(string n) {
+	string ret = "";
+	for (int i = 0; i < n.size(); ++i) {
+		ret += n[i];
+		ret += n[i];
+	}
+	return ret;
+}
+
+int main() {
+	
+	// cout << doubleChar("The") << endl;
+
+	/*
+
+		vector<int> graph = {1,8,6,2,5,4,8,3,7};
+		
+		cout << maxArea(graph) << endl;
+		
+		vector<int> graph2 = {2,3,4,5,18,17,6};
+
+		// cout << maxArea(graph2) << endl;
+
+		vector<int> nums = {1, 2, 3, 4, 100};
+
+		vector<int> nums1 = {1, 1, 5, 5, 10, 8, 7};
+
+		vector<int> nums2 = {-10, -4, -2, -4, -2, 0};
+
+	*/
+	
+	// cout << centeredAverage(nums) << endl;
+
+	// cout << centeredAverage(nums1) << endl;
+
+	// cout << centeredAverage(nums2) << endl;
+	
 	return 0;
+	
 }	
