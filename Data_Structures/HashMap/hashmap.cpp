@@ -6,10 +6,9 @@
 #include <time.h>
 #include <time.h>
 #include <time.h>
-#include<numeric>
-#include <sstream>
 
 // Built Data Structures
+#include <bits/stdc++.h>
 #include <unordered_map>
 #include <map>
 #include <queue>
@@ -19,36 +18,27 @@
 #include <set> 
 using namespace std;
 
-/* 
-	
+/*			  											 														 
 	█▀▄▀█ █▀▀█ █▀▀ █▀▀ █▀▀ ─█▀▀█ █▀▀▄ █▀▀ █───█ █▀▀█ █── █──█ 
 	█░█░█ █──█ ▀▀█ █▀▀ ▀▀█ ░█▄▄█ █──█ █▀▀ █▄█▄█ █──█ █── █──█ 
-	█──░█ ▀▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀ ░█─░█ ▀▀▀─ ▀▀▀ ─▀─▀─ ▀▀▀▀ ▀▀▀ ─▀▀▀
-	
+	█──░█ ▀▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀ ░█─░█ ▀▀▀─ ▀▀▀ ─▀─▀─ ▀▀▀▀ ▀▀▀ ─▀▀▀											 
 */
 
 
-// 16
+int main() {
 
+	std:map<std::string, int> map; // HashMap - String and Int
 
+	map["Moses"] = 20;
 
+	if (map.find("Moses") != map.end()) {
+		
+		std::cout << "map contains the value we're looking for" << endl;
+		
+	}
 
+	std::cout << map["Moses"] << endl;
+	
+	return 0;
 
-// 17
-
-
-
-
-
-// 18
-
-
-
-
-// 19
-
-
-
-
-
-// 20
+}

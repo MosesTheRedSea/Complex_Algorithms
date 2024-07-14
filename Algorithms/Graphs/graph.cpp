@@ -33,11 +33,11 @@ using namespace std;
 	We might run really far away
 
 	Breadth First Search
-
+	
 */
 
 class Edge;
-
+	  
 class Node {
 public:
     int value;
@@ -71,7 +71,6 @@ public:
         std::unordered_map<int, std::shared_ptr<Node>> node_map;
         node_map[node_From_Val] = nullptr;
         node_map[node_To_Val] = nullptr;
-
         for (const auto& node : nodes) {
             if (node_map.find(node->value) != node_map.end()) {
                 node_map[node->value] = node;
@@ -179,11 +178,12 @@ public:
     }
 
     void clearVisited() {
-        for (const auto& node : nodes) {
+        for (const auto& node : nodes) { // Sets the Boolean of Visited in all the nodes to False
             node->visited = false;
         }
     }
 
+    // Recursive DFS Helper
     std::vector<int> dfsHelper(std::shared_ptr<Node> start_node) {
         std::vector<int> ret_list;
         ret_list.push_back(start_node->value);
@@ -217,11 +217,9 @@ public:
         std::vector<int> ret_list;
         std::queue<std::shared_ptr<Node>> queue;
         auto start_node = findNode(start_node_num);
-
         clearVisited();
         start_node->visited = true;
         queue.push(start_node);
-
         while (!queue.empty()) {
             auto node = queue.front();
             queue.pop();
@@ -234,8 +232,14 @@ public:
                 }
             }
         }
-
         return ret_list;
+    }
+
+    std::vector<int> bfs(int start_node_num) {
+    	std::vector<int> ret_list;
+    	std::queue<std::shared_ptr<Node>> queue;
+    	auto start_node = findNode(start_node_num);
+    	clearVisited();
     }
 
     std::vector<std::string> bfsNames(int start_node_num) {

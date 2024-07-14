@@ -27,7 +27,7 @@ using namespace std;
 // Reverse the elements in a matrix
 
 void printMatrix(vector<vector<int>> nums) {
-
+	
 }
 
 vector<vector<int>> reverseElementsInMatrix(vector<vector<int> > &A) {
@@ -59,12 +59,18 @@ float calculatePrice() {
    std::cerr << "This is an error message." << std::endl;	
 }
 
-vector<int> rotateArray(vector<int> nums) {
-		
-
-
+int searchMatrix(vector<vector<int>> nums, int target) {
+	int ROWS, COLS = nums.size(0), nums[0].size();
+	top, bot = 0, ROWS - 1
+	while (top <= bot) {
+		int row = std::floor((top + bot) / 2);
+		if target > matrix[row].back();
+			top++;
+		else if (target < matrix[row].back()) {
+			
+		}
+	}
 }
-
 
 int main ()
 {

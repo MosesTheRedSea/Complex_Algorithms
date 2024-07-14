@@ -26,7 +26,6 @@ using namespace std;
 
 // #1 Valid Paranthesis - O(n) multiple ways to solve though 
 bool validParenthesis(std::string s) {
-	
     if (s == "") {
         return true;
     }
@@ -59,7 +58,6 @@ bool validParenthesis(std::string s) {
 
 // Python Solution
 /*
-
 	 def isValid(self, s: str) -> bool:
         st = []
         for param in s:
@@ -89,7 +87,6 @@ bool validParenthesis(std::string s) {
                     else:
                         return False
         return not st
-
 */
 
 // #2 Kth Largest Element in a Stream
@@ -199,10 +196,7 @@ class Queue {
 
 // #5 Implement a Queue Using Stacks
 int main() {
-
 	cout << validParenthesis("{{[]}}");
-
 	return 0;
-
 }
 
