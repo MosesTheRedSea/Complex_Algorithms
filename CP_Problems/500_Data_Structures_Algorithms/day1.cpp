@@ -27,17 +27,16 @@ using namespace std;
 */
 
 // Helper Methods - Solved
-
 template <typename T>	
-void printVector(const std::vector<T>& vec) {		
+void printVector(const std::vector<T>& vec) {
     std::cout << " Vector elements :" << std::endl;
     for (const auto& element : vec) {
-        std::cout << element << " ";	
+        std::cout << element << " ";
     }
     std::cout << endl;
 }
 
-// Daily Solve 25 Practice Coding Problems 
+// Daily Solve 25 Practice Coding Problems
 // #1 - Find a pair with the given sum in an array - O(n) Runtime - Solved
 vector<int> twoSumPair(vector<int> numbers, int target) {
 	map<int, int> m;
@@ -144,8 +143,7 @@ void largestSubArrayConsecutive(std::vector<int> numbers) {
 	printVector(ret);
 }
 
-
-// # 7 - Given an integer array, find the maximum length subarray having a given sum - Solved
+// #7 - Given an integer array, find the maximum length subarray having a given sum - Solved
 void maxLengthSubArraySum(vector<int> nums, int target) {
 	vector<int> subarray = {};
 	for (int i  = 0; i < nums.size(); ++i) {
@@ -162,7 +160,7 @@ void maxLengthSubArraySum(vector<int> nums, int target) {
 	printVector(subarray);
 }
 
-// # 8 - Given a binary array containing 0’s and 1’s, find the largest subarray with equal numbers of 0’s and 1’s - Solved
+// #8 - Given a binary array containing 0’s and 1’s, find the largest subarray with equal numbers of 0’s and 1’s - Solved
 void largestSubArrayEqual(vector<int> nums) {
 	vector<int> arr = {};
 	for (int i = 0; i < nums.size(); ++i) {
@@ -235,7 +233,6 @@ void merge(int X[], int Y[], int m, int n) {
 			ret[l + r] = Y[r];
 			r++;
 		}
-
 	}
 	while (l < ls) {
 		ret[r + l] = X[l];
@@ -249,22 +246,35 @@ void merge(int X[], int Y[], int m, int n) {
 
 // #11 -  Merge two arrays by satisfying given constraints
 void merge(int X[], int Y[], int m, int n) {
+
+	
+	
 }
 
 // #12 - Find the index of 0 to be replaced to get the maximum length sequence of continuous ones
 int findIndexofZero(int arr[], int n) {
+
+
+
 }
 
 // #13 - Find the maximum product of two integers in an array
-void findMaximumProduct(int arr[], int n) {     
+void findMaximumProduct(int arr[], int n) {  
+
+
+
 }
 
 // #14 - Shuffle an array using Fisher–Yates shuffle algorithm
 void rearrangeArray(int arr[], int n) {
+
+
+
 }
 
 // #15 - Rearrange an array with alternate high and low elements
 void threeWayPartition(int A[], int end) {
+
 }
 
 int main() {
@@ -279,6 +289,6 @@ int main() {
 
 	// largestSubArrayEqual(vector<int> {0, 0, 1, 0, 1, 0, 0 });
 
-	return 0;	
+	return 0;
 
 }
