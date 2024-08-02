@@ -27,18 +27,17 @@ using namespace std;
 */
 
 // Link : https://codeforces.com/blog/entry/82143
-
 // Problem 1 - A.Team
-int A_Team() {
-    int count;
-    std::cin >> count; // 3 How many inputs to have
-    std::cin.ignore(); // To ignore the newline character after the integer input
-    int questions = 0;
+int A_Team() {  
+    int count;  
+    std::cin >> count; // 3 How many inputs to have 
+    std::cin.ignore(); // To ignore the newline character after the integer inputs
+    int questions = 0;  
     for (int i = 0; i < count; ++i) {
-        std::string input;
-        std::getline(std::cin, input);
-        std::istringstream ss(input);
-        std::vector<int> values;
+        std::string input;  
+        std::getline(std::cin, input);  
+        std::istringstream ss(input);   
+        std::vector<int> values;    
         std::string item;
         while (ss >> item) {
             values.push_back(std::stoi(item));
@@ -57,12 +56,23 @@ int A_Team() {
     return 0;
 }
 
-// Problem 2 - 
+// Problem 2 - A. Is your horseshoe on the other hoof ?
 int horseShoe_On_Other_Hoof() {
-	
+	std::string input;
+    std::getline(std::cin, input);
+    std::istringstream ss(input);
+    std::vector<int> values;
+    std::string item;
+    while (ss >> item) {
+        values.push_back(std::stoi(item));
+    }
+
+         
+
 }
 
 int main() {
 
+    
 
 }
