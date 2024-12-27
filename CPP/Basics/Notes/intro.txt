@@ -1,0 +1,50 @@
+/*
+
+A computer program (also commonly called an application) is a set of instructions that a computer can follow to perform some task.
+The process of writing programs using a programming language is called programming
+
+Programmers typically write programs by creating source code (more often just called code)
+
+Notable hardware found on a typical computing device includes:
+- Interactive devices (e.g. a monitor, touch screen, keyboard, or mouse), which allow a person to interact with a computer.
+- Storage devices (e.g. a hard drive, SSD, or flash memory), which store information even when the computer is turned off.
+- Memory, where computer programs are loaded prior to execution.
+- A CPU (central processing unit, often called the “brain” of the computer), which actually executes the instructions.
+
+in modern computing, programs often interact with more than just hardware -- they also interact with other software on the system (particularly the operating system). The term platform refers to a compatible set of hardware (CPU) and software (OS, browser, etc…) that provides an environment for software applications to run. For example, the term “PC” is used colloquially to mean the platform consisting of a Windows OS running on an x86-family CPU.
+
+Machine Language
+
+A computer’s CPU is incapable of understanding C++. Instead, CPUs are only capable of processing instructions written in machine language (or machine code). The set of all possible machine language instructions that a given CPU can understand is called an instruction set.
+- A “CPU family” is formally called an “instruction set architecture”. Wikipedia has a list of different CPU families here.
+
+Here is a sample machine language instruction: 10110000 01100001.
+
+Each instruction is interpreted by the CPU into a command to do a very specific job, such as “compare these two numbers”, or “copy this number into that memory location”. Back when computers were first invented, programmers had to write programs directly in machine language, which was a very difficult and time-consuming thing to do.
+
+How these instructions are organized and interpreted is beyond the scope of this tutorial series, but it is worth noting two things.
+
+First, each instruction is composed of a sequence of 1s and 0s. Each individual 0 or 1 is called a binary digit, or bit for short. The number of bits in a machine language instruction varies -- for example, some CPUs process instructions that are always 32 bits long, whereas some other CPUs (such as those from the x86 family, which you may be using) have instructions that can be a variable length.
+
+Second, each family of compatible CPUs (e.g. x86, Arm64) has its own machine language, and this machine language is not compatible with the machine language of other CPU families. This means machine language programs written for one CPU family cannot be run on CPUs from a different family!
+
+Much like assembly language programs, programs written in high level languages must be translated into machine language before they can be run.
+ - There are two primary ways this is done: compiling and interpreting.
+
+C++ programs are usually compiled. 
+- A compiler is a program (or collection of programs) that reads source code (typically written in a high-level language) and translates it into some other language (typically a low-level language, such as machine language or assembly (which can then be assembled into machine language)). 
+
+- These machine language files are typically then combined into an executable file (containing machine language instructions) that can be run or distributed to others. Notably, running the executable file does not require the compiler to be installed.
+
+High-Level Language Source Code       ->           Compiler         ->            Executable
+                                  Compiled By                     Produces
+
+Executable         ->          Hardware            ->             Program Results
+                 Run On                          Produces
+
+An Interpreter is a program that directly executes the instructions in the source code without requiring them to be compiled into an executable first.
+
+Interpreters -  tend to be more flexible than compilers, but are less efficient when running programs because the interpreting process needs to be done every time the program is run.
+
+*/
+
