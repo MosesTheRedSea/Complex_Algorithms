@@ -1,10 +1,10 @@
 # Complex Algorithms
 
-Welcome to Complex Algorithms! This repository is dedicated to exploring advanced data structures and algorithms implemented in C++, with a focus on Object-Oriented Programming (OOP) principles. Whether you're a seasoned coder or just getting started with competitive programming (CP), you'll find a wealth of resources here to deepen your understanding and sharpen your skills.
+Welcome to Complex Algorithms! This repository is dedicated to exploring advanced data structures and algorithms implemented in C++ & C, with a focus on Object-Oriented Programming (OOP) principles. Whether you're a seasoned coder or just getting started with competitive programming (CP), you'll find a wealth of resources here to deepen your understanding and sharpen your skills.
 
 ## What's Inside?
 
-- **Data Structures:** Explore a variety of complex data structures such as trees, graphs, heaps, and more, implemented in C++ for efficiency and clarity.
+- **Data Structures:** Explore a variety of complex data structures such as trees, graphs, heaps, and more, implemented in C++ & C for efficiency and clarity.
 - **Algorithms:** Delve into advanced algorithms for sorting, searching, dynamic programming, and graph traversal, among others, all designed to tackle complex problem-solving scenarios.
 - **Object-Oriented Programming (OOP):** Learn how to apply OOP principles to your codebase, ensuring modular, reusable, and maintainable solutions.
 - **Competitive Programming (CP):** Sharpen your coding skills by solving challenging problems commonly encountered in competitive programming competitions, using efficient algorithms and data structures.
@@ -16,7 +16,7 @@ This repository is organized into folders based on the type of content:
 - **DataStructures:** Contains implementations of various data structures such as arrays, linked lists, stacks, queues, trees, graphs, heaps, and more.
 - **Algorithms:** Includes implementations of classic and advanced algorithms for sorting, searching, dynamic programming, graph algorithms, and more.
 - **OOP_Concepts:** Explore practical examples of how to apply Object-Oriented Programming principles to solve problems effectively and elegantly.
-- **CP_Problems:** Features a collection of problems commonly encountered in competitive programming competitions, along with their solutions in C++.
+- **CP_Problems:** Features a collection of problems commonly encountered in competitive programming competitions, along with their solutions in C++ & C.
 
 ## How to Use
 
