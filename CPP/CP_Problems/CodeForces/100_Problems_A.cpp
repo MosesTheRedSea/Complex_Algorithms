@@ -77,12 +77,11 @@ void boyOrGirl() {
     // We have the String input now we can make the necessary checks
     for (int i = 0; i < max.size(); ++i) {
         
-    }
+    }       
 }
 
-void checkValues() {
-
-}
+void checkValues() {    
+}       
 
 
 
