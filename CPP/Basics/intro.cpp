@@ -30,6 +30,24 @@ using namespace std;
 */
 
 int main() {
-	std::cout << "Hello world!";	
+
+	int x;
+
+	double width;
+
+	int length {2};
+
+	int a, b;
+
+	width = 5.0;
+
+	string name = "";
+
+	std::cout << width << endl;
+
+	std::cout << "Hello world!";
+
+	getline(cin, name);
+
 	return 0;
-}
+}                                            
