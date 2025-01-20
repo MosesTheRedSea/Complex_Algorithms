@@ -48,3 +48,209 @@ Interpreters -  tend to be more flexible than compilers, but are less efficient 
 
 */
 
+C++ KeyWords
+
+alignas
+alignof
+and
+and_eq
+asm
+auto
+bitand
+bitor
+bool
+break
+case
+catch
+char
+char8_t (since C++20)
+char16_t
+char32_t
+class
+compl
+concept (since C++20)
+const
+consteval (since C++20)
+constexpr
+constinit (since C++20)
+const_cast
+continue
+co_await (since C++20)
+co_return (since C++20)
+co_yield (since C++20)
+decltype
+default
+delete
+do
+double
+dynamic_cast
+else
+enum
+explicit
+export
+extern
+false
+float
+for
+friend
+goto
+if
+inline
+int
+long
+mutable
+namespace
+new
+noexcept
+not
+not_eq
+nullptr
+operator
+or
+or_eq
+private
+protected
+public
+register
+reinterpret_cast
+requires (since C++20)
+return
+short
+signed
+sizeof
+static
+static_assert
+static_cast
+struct
+switch
+template
+this
+thread_local
+throw
+true
+try
+typedef
+typeid
+typename
+union
+unsigned
+using
+virtual
+void
+volatile
+wchar_t
+while
+xor
+xor_eq
+
+
+The C++ standard only defines the meaning of 3 status codes: 0, EXIT_SUCCESS, and EXIT_FAILURE. 0 and EXIT_SUCCESS both mean the program executed successfully. EXIT_FAILURE means the program did not execute successfully.
+
+EXIT_SUCCESS and EXIT_FAILURE are preprocessor macros defined in the <cstdlib> header:
+
+#include <cstdlib> // for EXIT_SUCCESS and EXIT_FAILURE
+
+int main()
+{
+    return EXIT_SUCCESS;
+}
+
+Macro defines
+
+The #define directive can be used to create a macro. In C++, a macro is a rule that defines how input text is converted into replacement output text.
+
+There are two basic types of macros: object-like macros, and function-like macros.
+
+Function-like macros act like functions, and serve a similar purpose. Their use is generally considered unsafe, and almost anything they can do can be done by a normal function.
+
+One more common use of conditional compilation involves using #if 0 to exclude a block of code from being compiled (as if it were inside a comment block):
+
+
+A syntax error occurs when you write a statement that is not valid according to the grammar of the C++ language. This includes errors such as missing semicolons, mismatched parentheses or braces, etc… For example, the following program contains quite a few syntax errors:
+
+A semantic error is an error in meaning. These occur when a statement is syntactically valid, but either violates other rules of the language, or does not do what the programmer intended.
+
+
+Types   Category    Meaning Example
+float
+double
+long double Floating Point  a number with a fractional part 3.14159
+bool    Integral (Boolean)  true or false   true
+char
+wchar_t
+char8_t (C++20)
+char16_t (C++11)
+char32_t (C++11)    Integral (Character)    a single character of text  ‘c’
+short int
+int
+long int
+long long int (C++11)   Integral (Integer)  positive and negative whole numbers, including 0    64
+std::nullptr_t (C++11)  Null Pointer    a null pointer  nullptr
+void    Void    no type n/a
+
+Boolean bool    1 byte  1 byte
+Character   char    1 byte (exactly)    1 byte
+wchar_t 1 byte  2 or 4 bytes
+char8_t 1 byte  1 byte
+char16_t    2 bytes 2 bytes
+char32_t    4 bytes 4 bytes
+Integral    short   2 bytes 2 bytes
+int 2 bytes 4 bytes
+long    4 bytes 4 or 8 bytes
+long long   8 bytes 8 bytes
+Floating point  float   4 bytes 4 bytes
+double  8 bytes 8 bytes
+long double 8 bytes 8, 12, or 16 bytes
+Pointer std::nullptr_t  4 bytes 4 or 8 bytes
+
+
+short int   16 bits 
+int 16 bits Typically 32 bits on modern architectures
+long int    32 bits 
+long long int   64 bits 
+
+Signed Integers
+
+Defining signed integers
+
+Here is the preferred way to define the four types of signed integers:
+
+short s;      // prefer "short" instead of "short int"
+int i;
+long l;       // prefer "long" instead of "long int"
+long long ll; // prefer "long long" instead of "long long int"
+
+The integer types can also take an optional signed keyword, which by convention is typically placed before the type name:
+signed short ss;
+signed int si;
+signed long sl;
+signed long long sll;
+
+
+Unsigned integers
+
+In the previous lesson (4.4 -- Signed integers), we covered signed integers, which are a set of types that can hold positive and negative whole numbers, including 0.
+
+C++ also supports unsigned integers. Unsigned integers are integers that can only hold non-negative whole numbers.
+
+Defining unsigned integers
+
+To define an unsigned integer, we use the unsigned keyword. By convention, this is placed before the type:
+
+unsigned short us;
+unsigned int ui;
+unsigned long ul;
+unsigned long long ull;
+
+std::int8_t 1 byte signed   -128 to 127 Treated like a signed char on many systems. See note below.
+std::uint8_t    1 byte unsigned 0 to 255    Treated like an unsigned char on many systems. See note below.
+std::int16_t    2 byte signed   -32,768 to 32,767   
+std::uint16_t   2 byte unsigned 0 to 65,535 
+std::int32_t    4 byte signed   -2,147,483,648 to 2,147,483,647 
+std::uint32_t   4 byte unsigned 0 to 4,294,967,295  
+std::int64_t    8 byte signed   -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 
+std::uint64_t   8 byte unsigned 0 to 18,446,744,073,709,551,615
+
+C++ has three fundamental floating point data types: a single-precision float, a double-precision double, and an extended-precision long double. As with integers, C++ does not define the actual size of these types.
+
+C++ Source Code -> C++ Compiler -> Object Code
